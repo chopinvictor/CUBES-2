@@ -5,7 +5,7 @@ Script pour connecter l'ESP à Internet
 #include "ESP8266WiFi.h"                      // Inclure la librairie qui fournit des fonctions Wi-Fi basiques spécifiques à l'ESP8266
                                               // dont nous allons nous servir pour nous connecter au réseau
 
-const char* SSID = "Iphone de Victor";        // Définition de deux constantes représentant le nom du routeur 
+const char* SSID = "iPhone de Victor";        // Définition de deux constantes représentant le nom du routeur 
 const char* mdp = "mdpmdpmdp";                // ainsi que son mot de passe
 
 
@@ -18,8 +18,8 @@ void setup(void)                              // La procédure setup() ne s'éxe
   
   while (WiFi.status() != WL_CONNECTED)       // Boucle s'éxecutant si la connexion n'est pas encore établie
   {
-    delay(1000);                              // Ajout d'un delai pour ne pas afficher trop de '.'
-    Serial.println(".");                      // Affichage de point toutes les secondes durant la connexion
+    delay(750);                               // Ajout d'un delai pour ne pas afficher trop de '.'
+    Serial.println("*");                       // Affichage de point toutes les secondes durant la connexion
 
     if(WiFi.status() == WL_CONNECT_FAILED)    // Si la connexion échoue 
     {
