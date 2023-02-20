@@ -1,0 +1,34 @@
+import mysql.connector
+import time
+import board
+import adafruit_bme280
+
+# Configurez la connexion à la base de données
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="votre_nom_utilisateur",
+  password="Quinou123@",
+  database="Projet_Cube_2"
+)
+
+# Configurez le capteur
+i2c = board.I2C()
+bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
+
+# Boucle infinie pour récupérer les données du capteur et les stocker dans la base de données
+while True:
+  # Récupérez les données du capteur
+  temperature = bme280.temperature
+  pression = bme280.pressure
+  humidite = bme280.humidity
+
+  # Insérez les données dans la base de données
+  cursor = mydb.cursor()
+  sql = "INSERT INTO bme280 (temperature, pression, humidite) VALUES (%s, %s, %s)"
+  valeurs = (temperature, pression, humidite)
+  cursor.execute(sql, valeurs)
+  mydb.commit()
+  cursor.close()
+
+  # Attendez 30 secondes avant de récupérer de nouvelles données
+  time.sleep(30)
