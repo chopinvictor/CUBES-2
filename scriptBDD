@@ -1,34 +1,42 @@
 import mysql.connector
-import time
 import board
 import adafruit_bme280
+import time
 
-# Configurez la connexion à la base de données
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="votre_nom_utilisateur",
-  password="Quinou123@",
-  database="Projet_Cube_2"
-)
+# Remplacez les valeurs suivantes par vos propres paramètres de connexion
+host = 'localhost'
+user = 'juliette'
+password = 'Quinou123'
+database = 'cube2'
 
-# Configurez le capteur
+# Établir une connexion à la base de données
+try:
+    conn = mysql.connector.connect(host=host, user=user, password=password, database=database)
+    print("Connexion à la base de données réussie !")
+except mysql.connector.Error as err:
+    print(f"Erreur de connexion à la base de données : {err}")
+
+# Initialiser le capteur BME280
 i2c = board.I2C()
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 
-# Boucle infinie pour récupérer les données du capteur et les stocker dans la base de données
-while True:
-  # Récupérez les données du capteur
-  temperature = bme280.temperature
-  pression = bme280.pressure
-  humidite = bme280.humidity
+# Récupérer les valeurs de température, de pression et d'humidité
+temperature = round(bme280.temperature, 2)
+humidity = round(bme280.humidity, 2)
+pressure = round(bme280.pressure, 2)
 
-  # Insérez les données dans la base de données
-  cursor = mydb.cursor()
-  sql = "INSERT INTO bme280 (temperature, pression, humidite) VALUES (%s, %s, %s)"
-  valeurs = (temperature, pression, humidite)
-  cursor.execute(sql, valeurs)
-  mydb.commit()
-  cursor.close()
+# Insérer les valeurs dans la base de données
+cursor = conn.cursor()
+query = f"INSERT INTO meteo (temperature, humidity, pressure, date_heure) VALUES ({temperature}, {humidity}, {pressure}, {SYSDATE()})"
+cursor.execute(query)
+conn.commit()
 
-  # Attendez 30 secondes avant de récupérer de nouvelles données
-  time.sleep(30)
+# Afficher un message de confirmation
+print(f"Données insérées dans la base de données : {temperature} °C, {humidity} %, {pressure} hPa", {date_heure})
+
+# Attendez 30 secondes avant de récupérer de nouvelles données
+  time.sleep(30) 
+
+# Fermer la connexion à la base de données
+cursor.close()
+conn.close()
