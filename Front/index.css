@@ -1,0 +1,35 @@
+body {
+    margin:0;
+    overflow: hidden;
+}
+
+h3{
+    font-family: 'Lato', sans-serif;
+    font-size:24px;
+    text-shadow: #000 5px 5px 5px;
+}
+
+.section{
+    display: flex;
+    /* background: rgb(50, 164, 208) 100%;  */
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+    margin: 1% 0.5% 1% 0.5%;
+    border: 2px solid black;
+}
+
+#leftNav{
+    background: linear-gradient(145deg, rgba(0,172,193,1) 0%, rgba(84,58,183,1) 100%); 
+    color:white;
+    height: 100%;
+    width: 2%;   
+    margin-left: 0.5%;
+}
+
+#mainFrame{
+    display: flex;
+    /* background: rgba(0, 171, 193, 0.459) 100%; */
+    height: 600px;
+    width: 100%;
+}
