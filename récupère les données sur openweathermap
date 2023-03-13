@@ -1,0 +1,16 @@
+import requests
+
+api_key = 'fca3e81d6c82bf8535af66bac6331c7a'
+url = f'http://api.openweathermap.org/data/2.5/weather?q=Pau,fr&appid={api_key}'
+
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+    temperature = data['main']['temp']
+    humidity = data['main']['humidity']
+    pressure = data['main']['pressure']
+    print(f"Température : {temperature} K")
+    print(f"Humidité : {humidity} %")
+    print(f"Pression : {pressure} hPa")
+else:
+    print(f"Erreur : {response.status_code}")
