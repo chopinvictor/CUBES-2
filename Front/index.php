@@ -1,3 +1,10 @@
+<?php
+require_once('bdd.php');
+require_once('fonctions.php');
+$data = readAllData();
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="fr" style="max-width: 100%;">
@@ -20,6 +27,7 @@
     <div id="mainFrame">
         <?php 
            require_once('nav.php');
+           echo htmlListData($data);
         ?>
         <section class="section">
             <h3>Ma Ville</h3>
@@ -31,10 +39,6 @@
 
         </div>
     </div>
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/index.js"></script>   
 </body>
