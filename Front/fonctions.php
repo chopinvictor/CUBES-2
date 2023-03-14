@@ -44,6 +44,12 @@ function getLastPression(){
     return $r->fetchColumn();
 }
 
+function getLastHeure(){
+    $db = getDb();
+    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
 function getLastTemperatureMaison(){
     $db = getDb();
     $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
@@ -59,5 +65,11 @@ function getLastHumiditeMaison(){
 function getLastPressionMaison(){
     $db = getDb();
     $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastHeureMaison(){
+    $db = getDb();
+    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
     return $r->fetchColumn();
 }
