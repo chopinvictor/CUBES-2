@@ -1,0 +1,22 @@
+import requests #bibliothèque permettant d'effectuer des requêtes http
+
+# Définition des données liées à l'API
+api_key = 'fca3e81d6c82bf8535af66bac6331c7a'
+url = f'http://api.openweathermap.org/data/2.5/weather?q=Pau,fr&appid={api_key}&units=metric'
+
+# Récupérer les données de l'API et les afficher
+response = requests.get(url) #On fait une requête afin de récupérer l'url renseigné plus haut
+
+if response.status_code == 200: #response.status_code retourne un nombre qui est le code de statut de la requête HTML. 200 succès, 404 erreur
+    data = response.json() #retourne un objet json
+    temperature = data['main']['temp'] #On crée des variables pour stocker et afficher des données que l'on récupère dans l'API
+    humidity = data['main']['humidity']
+    pressure = data['main']['pressure']
+    print(temperature)
+    print(humidity)
+    print(pressure)
+else:
+    print(f"Erreur : {response.status_code}") #Affiche le statut de la requête si celui-ci n'est pas 200
+
+
+
