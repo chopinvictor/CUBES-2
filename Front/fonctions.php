@@ -25,3 +25,39 @@
             }
  return $html;
 }
+
+function getLastTemperature(){
+    $db = getDb();
+    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastHumidite(){
+    $db = getDb();
+    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastPression(){
+    $db = getDb();
+    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastTemperatureMaison(){
+    $db = getDb();
+    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastHumiditeMaison(){
+    $db = getDb();
+    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
+
+function getLastPressionMaison(){
+    $db = getDb();
+    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
+    return $r->fetchColumn();
+}
