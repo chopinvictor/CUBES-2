@@ -2,7 +2,7 @@ import requests
 import mysql.connector
 import datetime
 
-# Définition des données liées à l'API
+# clef de l'api + lien qui redirige les données de pau 
 api_key = 'fca3e81d6c82bf8535af66bac6331c7a'
 url = f'http://api.openweathermap.org/data/2.5/weather?q=Pau,fr&appid={api_key}'
 
