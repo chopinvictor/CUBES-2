@@ -26,6 +26,7 @@
  return $html;
 }
 
+//Toutes les requetes qui vont récuperer la dernière donnée de openweathermap
 function getLastTemperature(){
     $db = getDb();
     $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
@@ -50,6 +51,7 @@ function getLastHeure(){
     return $r->fetchColumn();
 }
 
+//Toutes les requetes qui vont récuperer la dernière donnée de la maison
 function getLastTemperatureMaison(){
     $db = getDb();
     $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
