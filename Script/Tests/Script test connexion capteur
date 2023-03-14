@@ -1,0 +1,19 @@
+import smbus2 #bibliothèque pour modifier les bus
+import bme280 #bibliothèque du capteur
+
+# Initialiser le capteur BME
+port = 1 #bus I2C utilisé par le capteur
+address = 0x76 #adresse du bus
+bus = smbus2.SMBus(port) #définition du bus concerné
+calibration_params = bme280.load_calibration_params(bus, address) #chargement des paramètres du capteur
+
+# Récupérer les données envoyées par la capteur
+data = bme280.sample(bus, address, calibration_params) 
+temperature = data.temperature
+humidity = data.humidity
+pressure = data.pressure
+
+# Affichage des données récoltées
+print(temperature)
+print(humidity)
+print(pressure)

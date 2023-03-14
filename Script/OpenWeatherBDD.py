@@ -15,9 +15,9 @@ try: #On essaye de se connecter à la BDD avec les infos données plus haut.
 except mysql.connector.Error as err: #Si une exception intervient lors de la connexion, on affiche l'erreur en question
         print(f"Erreur de connexion à la base de données : {err}")
 
-# Clef de l'api + lien qui redirige les données de pau 
+# Clé de l'api + lien qui redirige les données de pau 
 api_key = 'fca3e81d6c82bf8535af66bac6331c7a'
-url = f'http://api.openweathermap.org/data/2.5/weather?q=Pau,fr&appid={api_key}'
+url = f'http://api.openweathermap.org/data/2.5/weather?q=Pau,fr&appid={api_key}&units=metric'
 
 # Récupérer les données de l'API
 response = requests.get(url) #On fait une requête afin de récupérer l'url renseigné plus haut
