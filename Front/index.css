@@ -4,32 +4,60 @@ body {
 }
 
 h3{
-    font-family: 'Lato', sans-serif;
-    font-size:24px;
-    text-shadow: #000 5px 5px 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 32px;
+    color: hsla(0, 0, 0, 1);
+     margin: 5px !important;
+}
+
+h3 p{
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
 }
 
 .section{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     /* background: rgb(50, 164, 208) 100%;  */
     opacity: 50%;
     height: 100%;
     width: 100%;
     margin: 1% 0.5% 1% 0.5%;
-    border: 2px solid black;
+    border: 2px solid #155e8a;
+    max-width: 50%;
 }
 
-#leftNav{
+/* #leftNav{
     background: linear-gradient(145deg, rgba(0,172,193,1) 0%, rgba(84,58,183,1) 100%); 
     color:white;
     height: 100%;
     width: 2%;   
     margin-left: 0.5%;
-}
+} */
 
 #mainFrame{
     display: flex;
     /* background: rgba(0, 171, 193, 0.459) 100%; */
-    height: 600px;
+    height: 560px;
+    width: max-content;
     width: 100%;
+}
+
+.Data{
+    display: flex;
+    width: max-content;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+.Data p{
+    border: black solid 2px;
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    margin: 5px;
 }
