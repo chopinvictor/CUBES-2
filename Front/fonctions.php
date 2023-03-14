@@ -28,9 +28,9 @@
 
 //Toutes les requetes qui vont récuperer la dernière donnée de openweathermap
 function getLastTemperature(){
-    $db = getDb();
-    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
+    $db = getDb(); // je vais chercher la fonction getdb pour me connecter à la bdd
+    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;"); //exécute une requête SQL sur la base de données pour récupérer la dernière valeur enregistré par la colonne date_heure ayant comme referencement 'opm'
+    return $r->fetchColumn(); // renvoie la première colonne de la première ligne du résultat de la requête SQL
 }
 
 function getLastHumidite(){
