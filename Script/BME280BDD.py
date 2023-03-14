@@ -18,10 +18,10 @@ except mysql.connector.Error as err: #Si une exception intervient lors de la con
         print(f"Erreur de connexion à la base de données : {err}")
 
 # Initialiser le capteur BME
-port = 1
-address = 0x76
-bus = smbus2.SMBus(port)
-calibration_params = bme280.load_calibration_params(bus, address)
+port = 1 #bus I2C utilisé par le capteur
+address = 0x76 #adresse du bus
+bus = smbus2.SMBus(port) #Définition du bus concerné
+calibration_params = bme280.load_calibration_params(bus, address) #Chargement des paramètres du capteur
 
 
 # Récupérer les données envoyées par la capteur
