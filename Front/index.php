@@ -24,21 +24,93 @@ $lastEntryOPM = getLastEntryOPM();
 
     <div id="mainFrame">
         <section class="section">
-            <h3>Pau<p>Données récupérées à <?php echo (substr($lastEntryOPM['date_heure'], 11, 5))?></p></h3>
+            <group>
+                <img src="assets/city.png"></img>
+                <h3>Pau
+                    <p>Données récupérées à 
+                        <?php echo (substr($lastEntryOPM['date_heure'], 11, 5))?>
+                    </p>
+                </h3>
+            </group>
                 <div class="Data">
-                    <div>Température :<span><?php echo $lastEntryOPM['temperature'] ?><span class="unit"> °C</span></span></div>
-                    <div>Humidité :<span><?php echo $lastEntryOPM['humidite'] ?><span class="unit"> %</span></span></div>
-                    <div>Pression :<span><?php echo $lastEntryOPM['pression'] ?><span class="unit"> hPa</span></span></div>
-                    <div><a href="histOPM.php">Historique</a></div>
+                    <div>
+                       <subgroup>
+                            <img src="assets/thermometer.png">Température :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntryOPM['temperature'] ?>
+                            <span class="unit">
+                                °C
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                       <subgroup>
+                            <img src="assets/drop.png">Humidité :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntryOPM['humidite'] ?>
+                            <span class="unit">
+                                %
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                       <subgroup>
+                       <img src="assets/barometer.png">Pression :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntryOPM['pression'] ?>
+                            <span class="unit">
+                                °C
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                        <a href="histOPM.php">Historique</a>
+                    </div>
                 </div>
         </section>
         <section class="section">
-            <h3>Maison<p>Données récupérées à <?php echo (substr($lastEntrySEN['date_heure'], 11, 5))?></p></h3>
-                <div class="Data">
-                    <div>Température :<span><?php echo $lastEntrySEN['temperature'] ?><span class="unit"> °C</span></span></div>
-                    <div>Humidité :<span><?php echo $lastEntrySEN['humidite'] ?><span class="unit"> %</span></span></div>
-                    <div>Pression :<span><?php echo $lastEntrySEN['pression'] ?><span class="unit"> hPa</span></span></div>
-                    <div><a href="histSEN.php">Historique</a></div>
+            <group>
+                <img src="assets/house.png"></img>
+                <h3>Maison
+                    <p>Données récupérées à 
+                        <?php echo (substr($lastEntrySEN['date_heure'], 11, 5))?>
+                    </p>
+                </h3>
+            </group>
+            <div class="Data">
+                <div>
+                       <subgroup>
+                            <img src="assets/thermometer.png">Température :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntrySEN['temperature'] ?>
+                            <span class="unit">
+                                °C
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                       <subgroup>
+                            <img src="assets/drop.png">Humidité :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntrySEN['humidite'] ?>
+                            <span class="unit">
+                                %
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                       <subgroup>
+                       <img src="assets/barometer.png">Pression :</img>
+                        </subgroup>
+                        <span><?php echo $lastEntrySEN['pression'] ?>
+                            <span class="unit">
+                                °C
+                            </span>
+                        </span>
+                    </div>
+                    <div>
+                        <a href="histSEN.php">Historique</a>
+                    </div>
         </section>
         <!-- <div id="leftNav">
 

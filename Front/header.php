@@ -44,7 +44,11 @@
 
 <div class="header">
     <div class="inner-header flex">
-        <h1>Ma Station Météo</h1>
+        <div id="titre">
+            <img id="icoTitre" src="assets/clouds-and-sun.png"></img>
+            <h1>Ma Station Météo</h1>
+        </div>
+
         <div id="actu">
             <p><?php echo $description ?></p>
             <img src="<?php echo $iconUrl ?>" />

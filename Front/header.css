@@ -6,7 +6,9 @@ h1 {
   letter-spacing: 2px;
   font-size:48px;
   text-shadow: #000 5px 5px 5px;
-  margin: 10px;
+  margin: auto;
+  min-width: 100%;
+  text-align: left;
 }
 
 .header {
@@ -70,4 +72,15 @@ h1 {
   h1 {
     font-size:24px;
   }
+}
+
+#titre{
+  display: flex;
+  flex-direction: row;
+}
+
+#icoTitre{
+  width: auto;
+  height: 50px;
+  margin: 5%;
 }
