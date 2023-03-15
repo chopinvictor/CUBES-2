@@ -4,126 +4,14 @@
     $html = '';
 
     foreach($data as $d){
-        $idEntree = $d['id_meteo'];
-        $html.='
-        <div class="li">
-        <div class="hoverindex">
-            <a class="h5" <h5>'.$d['id_meteo'].'</h5></a>
-            <section>
-                <div>
-                    <p>'.$d['temperature'].'</p>
-                </div>
-                <div>
-                    <p>'.$d['pression'].'</p>
-                </div>
-                <div>
-                    <p>'.$d['humidite'].'</p>
-                </div>
-                <div>
-                    <p>'.$d['date_heure'].'</p>
-                </div>';
+        
+        $html.='    
+        <tr>
+                <td>'.$d['date_heure'].'</td>
+                <td>'.$d['temperature'].' °C</td>
+                <td>'.$d['humidite'].' %</td>
+                <td>'.$d['pression'].' hPa</td>
+        </tr>';
             }
  return $html;
-}
-
-//Toutes les requetes qui vont récuperer la dernière donnée de openweathermap
-function getLastTemperature(){
-    $db = getDb(); // je vais chercher la fonction getdb pour me connecter à la bdd
-    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;"); //exécute une requête SQL sur la base de données pour récupérer la dernière valeur enregistré par la colonne date_heure ayant comme referencement 'opm'
-    return $r->fetchColumn(); // renvoie la première colonne de la première ligne du résultat de la requête SQL
-}
-
-function getLastHumidite(){
-    $db = getDb();
-    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-function getLastPression(){
-    $db = getDb();
-    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-function getLastHeure(){
-    $db = getDb();
-    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-//Toutes les requetes qui vont récuperer la dernière donnée de la maison
-function getLastTemperatureMaison(){
-    $db = getDb();
-    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-function getLastHumiditeMaison(){
-    $db = getDb();
-    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-function getLastPressionMaison(){
-    $db = getDb();
-    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-function getLastHeureMaison(){
-    $db = getDb();
-    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1;");
-    return $r->fetchColumn();
-}
-
-
-//Toutes les requetes qui vont récuperer les 3 dernière donnée en excluant la dernière de openweathermap
-function getLastTemperature3(){
-    $db = getDb();
-    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastHumidite3(){
-    $db = getDb();
-    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastPression3(){
-    $db = getDb();
-    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastHeure3(){
-    $db = getDb();
-    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'opm' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-
-//Toutes les requetes qui vont récuperer les 3 dernière donnée en excluant la dernière de Maison
-function getLastTemperatureMaison3(){
-    $db = getDb();
-    $r = $db->query("SELECT temperature FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastHumiditeMaison3(){
-    $db = getDb();
-    $r = $db->query("SELECT humidite FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastPressionMaison3(){
-    $db = getDb();
-    $r = $db->query("SELECT pression FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
-}
-
-function getLastHeureMaison3(){
-    $db = getDb();
-    $r = $db->query("SELECT date_heure FROM meteo WHERE referencement = 'sen' ORDER BY date_heure DESC LIMIT 1, 3;");
-    return $r->fetchColumn();
 }

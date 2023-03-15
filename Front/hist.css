@@ -1,56 +1,30 @@
-body {
-    margin:0;
-    overflow: hidden;
-}
-
-h3{
-    font-family: 'Arial', sans-serif;
-    font-size: 32px;
-    color: hsla(0, 0, 0, 1);
-     margin: 15px 0 0 15px!important;
-}
-
-h3 p{
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 200;
+body{
     margin: 0;
 }
 
 .section{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* background: rgb(50, 164, 208) 100%;  */
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
     opacity: 75%;
     height: 100%;
     width: 100%;
-    margin: 1% 0.5% 1% 1.5%;
-    border: 2px solid #000000;
-    max-width: 725px;
+    max-width: 1725px;
 }
 
-#mainFrame{
-    display: flex;
-    /* background: rgba(0, 171, 193, 0.459) 100%; */
-    height: 560px;
-    width: max-content;
-    width: 100%;
-}
 
 .Data{
     display: flex;
-    width: max-content;
+    width: 100%;
     flex-wrap: wrap;
     margin: 25px;
     justify-content: space-between;
+    border: #000000 solid 2px;
 }
 
 .Data div{
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 175px;
     margin: 10px;
     font-weight: 400;
     font-family: 'Lato', sans-serif;
@@ -60,11 +34,11 @@ h3 p{
     padding: 15px;
 }
 
-.Data a{
+.bouton{
     display: flex;
-    width: 125px;
+    width: 100px;
     height: 40px;
-    margin: auto;
+    margin: 25px;
     font-weight: 400;
     font-family: 'Lato', sans-serif;
     text-shadow: #00000030 5px 5px 5px;
@@ -85,4 +59,29 @@ h3 p{
 
 .unit{
     font-size: 30px !important;
+}
+
+#top{
+    display: flex;
+    flex-direction: column;
+}
+
+#histBouton{
+    height: fit-content;
+}
+
+.dataContent{
+    width: 100%;
+}
+
+caption{
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin: 0px 0px 15px 100px;
+}
+
+table{
+    margin: 10px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
 }
