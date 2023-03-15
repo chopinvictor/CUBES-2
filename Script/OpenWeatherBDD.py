@@ -1,6 +1,6 @@
-import requests #module permettant d'effectuer des requêtes http
-import mysql.connector #module de connexion à la BDD
-import datetime #module qui fournit des classes permettant de manipuler les dates et les heures
+import requests #bibliothèque permettant d'effectuer des requêtes http
+import mysql.connector #bibliothèque de connexion à la BDD
+import datetime #bibliothèque qui fournit des classes permettant de manipuler les dates et les heures
 
 # Renseigner les valeurs utiles à la connexion
 host = 'localhost'
