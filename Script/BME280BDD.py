@@ -2,7 +2,7 @@ import smbus2 #bibliothèque pour modifier les bus
 import bme280
 import datetime #bibliothèque qui fournit des classes permettant de manipuler les dates et les heures
 import time #bibliothèque qui permet d'obtenir l'heure actuelle
-import mysql.connector #module de connexion à la BDD
+import mysql.connector #bibliothèque de connexion à la BDD
 
 # Renseigner les valeurs utiles à la connexion
 host = 'localhost'
