@@ -1,7 +1,7 @@
 <?php
-require_once('bdd.php');
+require_once('bdd.php'); #appelle le contenu du fichier concerné et provoque une erreur bloquante s'il est indisponible
 require_once('fonctions.php');
-$data = getAllEntryOPM();
+$data = getAllEntryOPM(); #récupère toutes l'API dans le fichier bdd
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ $data = getAllEntryOPM();
     </tr>
   </thead>
   <tbody>
-    <?php echo htmlListData($data); ?>
+    <?php echo htmlListData($data); ?> <!--appel à la fonction présente dans le fichier fonctions.php>
   </tbody>
 </table>
 

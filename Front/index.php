@@ -1,8 +1,8 @@
 <?php
-require_once('bdd.php');
+require_once('bdd.php'); #appelle le contenu du fichier concerné et provoque une erreur bloquante s'il est indisponible
 require_once('fonctions.php');
-$lastEntrySEN = getLastEntrySEN();
-$lastEntryOPM = getLastEntryOPM();
+$lastEntrySEN = getLastEntrySEN(); #récupère les dernières données du capteur dans le fichier bdd
+$lastEntryOPM = getLastEntryOPM(); #récupère les dernières données de l'API dans le fichier bdd
 //var_dump($lastEntry);
 ?>
 
@@ -18,7 +18,7 @@ $lastEntryOPM = getLastEntryOPM();
 <body>
     <header>
         <?php 
-           require_once('header.php');
+           require_once('header.php'); 
         ?>
     </header>
 
@@ -28,7 +28,7 @@ $lastEntryOPM = getLastEntryOPM();
                 <img src="assets/city.png"></img>
                 <h3>Pau
                     <p>Données récupérées à 
-                        <?php echo (substr($lastEntryOPM['date_heure'], 11, 5))?>
+                        <?php echo (substr($lastEntryOPM['date_heure'], 11, 5))?> <!--ne renvoie pas toute la string, commence au 11ème caractère et ne sélectionne que 5 caractères-->
                     </p>
                 </h3>
             </group>
@@ -37,7 +37,7 @@ $lastEntryOPM = getLastEntryOPM();
                        <subgroup>
                             <img src="assets/thermometer.png">Température :</img>
                         </subgroup>
-                        <span><?php echo $lastEntryOPM['temperature'] ?>
+                        <span><?php echo $lastEntryOPM['temperature'] ?>    <!--renvoie la dernière donnée de temp-->
                             <span class="unit">
                                 °C
                             </span>
@@ -64,7 +64,7 @@ $lastEntryOPM = getLastEntryOPM();
                         </span>
                     </div>
                     <div>
-                        <a href="histOPM.php">Historique</a>
+                        <a href="histOPM.php">Historique</a>  <!-- lien vers l'historique de OPM-->
                     </div>
                 </div>
         </section>
@@ -109,7 +109,7 @@ $lastEntryOPM = getLastEntryOPM();
                         </span>
                     </div>
                     <div>
-                        <a href="histSEN.php">Historique</a>
+                        <a href="histSEN.php">Historique</a> <!-- lien vers l'historique de SEN-->
                     </div>
         </section>
     </div>
