@@ -7,7 +7,7 @@ address = 0x76 #adresse du bus
 bus = smbus2.SMBus(port) #définition du bus concerné
 calibration_params = bme280.load_calibration_params(bus, address) #chargement des paramètres du capteur
 
-# Récupérer les données envoyées par la capteur
+# Récupérer les données envoyées par les capteur
 data = bme280.sample(bus, address, calibration_params) 
 temperature = data.temperature
 humidity = data.humidity
