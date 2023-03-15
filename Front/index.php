@@ -112,15 +112,6 @@ $lastEntryOPM = getLastEntryOPM();
                         <a href="histSEN.php">Historique</a>
                     </div>
         </section>
-        <!-- <div id="leftNav">
-
-        </div> -->
     </div>
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../js/index.js"></script>   
 </body>
 </html>
